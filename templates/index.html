@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zebra Label PDF Generator</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Zebra Label PDF Generator</h1>
+        <p>Upload a <span style="color:rgb(255, 0, 0);">.txt</span> file containing Zebra label data to generate a PDF.</p>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="file-upload">
+                <input type="file" id="file-input" name="file" accept=".txt" required>
+
+                <span class="file-name" id="file-name">No file selected</span>
+            </div>
+            <button type="submit">Generate PDF</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
