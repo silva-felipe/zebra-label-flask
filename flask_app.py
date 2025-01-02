@@ -12,6 +12,10 @@ app = Flask(__name__)
 os.makedirs('queue', exist_ok=True)
 os.makedirs('zebras_pdf', exist_ok=True)
 
+@app.route('/', methods=['GET'])
+def index():
+    return render_template('index.html')
+
 @app.route('/zebra-label-pdf-generator', methods=['GET'])
 def index():
     return render_template('index.html')
