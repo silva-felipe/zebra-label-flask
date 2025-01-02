@@ -17,7 +17,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/zebra-label-pdf-generator', methods=['GET'])
-def index():
+def index_2():
     return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
