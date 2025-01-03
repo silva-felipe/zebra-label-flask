@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file, send_from_directory
 from txt_parser import file_parser
 from zebra_pdf import generate_pdf
 from concat_pdf import merge_pdf
@@ -19,6 +19,10 @@ def index():
 @app.route('/zebra-label-pdf-generator', methods=['GET'])
 def index_2():
     return render_template('index.html')
+
+@app.route('/ads.txt')
+def ads_txt():
+    return send_from_directory('static', 'ads.txt')
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
